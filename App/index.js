@@ -47,7 +47,7 @@ function StoryScreen({ route }) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: '#121212',
         paddingTop: 20,
         paddingHorizontal: 16,
         alignItems: 'center',
@@ -56,6 +56,7 @@ const styles = StyleSheet.create({
         fontSize: 24,
         fontWeight: 'bold',
         marginVertical: 20,
+        color: '#fff',
         textAlign: 'center',
     },
     storyButton: {
@@ -76,6 +77,7 @@ const styles = StyleSheet.create({
     content: {
         fontSize: 16,
         textAlign: 'justify',
+        color: '#ddd',
     },
 });
 
@@ -83,8 +85,8 @@ export default function App() {
     return (
         <NavigationContainer>
             <Stack.Navigator initialRouteName="Home">
-                <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Story Tales' }} />
-                <Stack.Screen name="Story" component={StoryScreen} options={({ route }) => ({ title: route.params.title })} />
+                <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Story Tales', headerStyle: { backgroundColor: '#121212' }, headerTintColor: '#fff' }} />
+                <Stack.Screen name="Story" component={StoryScreen} options={({ route }) => ({ title: route.params.title, headerStyle: { backgroundColor: '#121212' }, headerTintColor: '#fff' })} />
             </Stack.Navigator>
         </NavigationContainer>
     );
